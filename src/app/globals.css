@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+/*
+ * Charte graphique — Miora Dinasoa
+ * Prune (confiance, élégance) · Corail (chaleur, action) · Sauge (sérénité) · Sable (douceur)
+ * Détails : docs/CHARTE_GRAPHIQUE.md
+ */
+@theme {
+  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
+
+  --color-plum-50: #f8f3fa;
+  --color-plum-100: #efe4f3;
+  --color-plum-200: #dcc6e5;
+  --color-plum-300: #c19dd1;
+  --color-plum-400: #9e6db4;
+  --color-plum-500: #7e4a95;
+  --color-plum-600: #64367a;
+  --color-plum-700: #4a2358;
+  --color-plum-800: #3a1b46;
+  --color-plum-900: #2a1333;
+
+  --color-coral-50: #fdf3f0;
+  --color-coral-100: #fbe3dc;
+  --color-coral-200: #f6c5b7;
+  --color-coral-300: #f2b8a6;
+  --color-coral-400: #ea8f75;
+  --color-coral-500: #e07a5f;
+  --color-coral-600: #c9634b;
+  --color-coral-700: #a64d39;
+
+  --color-sage-50: #f3f7f4;
+  --color-sage-100: #e2ece5;
+  --color-sage-300: #a9c4b1;
+  --color-sage-500: #7fa48a;
+  --color-sage-700: #4e6f58;
+
+  --color-sand-50: #fdfbf8;
+  --color-sand-100: #faf6f1;
+  --color-sand-200: #f4ece3;
+  --color-sand-300: #ede3d8;
+  --color-sand-400: #dccbb8;
+
+  --color-ink: #231b26;
+  --color-muted: #6e6273;
+
+  --radius-card: 1.25rem;
+  --shadow-soft: 0 10px 30px -12px rgb(74 35 88 / 0.18);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-sand-100 text-ink font-sans antialiased;
+  }
+  h1,
+  h2,
+  h3 {
+    @apply font-display tracking-tight text-plum-800;
+  }
+  ::selection {
+    @apply bg-coral-200 text-plum-900;
+  }
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-coral-500;
+  }
+}
+
+/* Composants réutilisables */
+@utility container-page {
+  @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
+}
+@utility btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold transition disabled:cursor-not-allowed disabled:opacity-60;
+}
+@utility btn-primary {
+  @apply btn bg-coral-500 text-white shadow-soft hover:bg-coral-600;
+}
+@utility btn-secondary {
+  @apply btn bg-plum-700 text-white hover:bg-plum-800;
+}
+@utility btn-ghost {
+  @apply btn border border-plum-200 bg-white/60 text-plum-700 hover:border-plum-400 hover:bg-white;
+}
+@utility btn-danger {
+  @apply btn bg-red-600 text-white hover:bg-red-700;
+}
+@utility card {
+  @apply rounded-card border border-sand-300 bg-white shadow-soft;
+}
+@utility eyebrow {
+  @apply text-xs font-semibold tracking-[0.18em] text-coral-600 uppercase;
+}
+@utility label {
+  @apply mb-1.5 block text-sm font-medium text-plum-800;
+}
+@utility input {
+  @apply block w-full rounded-xl border border-sand-400 bg-white px-4 py-2.5 text-sm text-ink placeholder:text-muted/70 transition focus:border-plum-400 focus:ring-4 focus:ring-plum-100 focus:outline-none;
+}
+@utility field-error {
+  @apply mt-1 text-xs text-red-600;
+}
+@layer components {
+  .prose-simple p {
+    @apply mb-4 leading-relaxed text-ink/85;
+  }
+}

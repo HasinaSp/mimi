@@ -1,0 +1,81 @@
+// Schéma de données du portfolio de Miora Dinasoa
+// Docs : https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+/// Compte administrateur du back-office
+model User {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  name         String?
+  passwordHash String
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+/// Services proposés (voir src/lib/services.ts pour les libellés)
+enum ServiceType {
+  COMMUNITY_MANAGEMENT
+  GESTION_ADMINISTRATIVE
+  SEO
+  DESIGN_WEB
+  RELATION_CLIENT
+  MONTAGE_VIDEO
+  DEVELOPPEMENT_WEB
+}
+
+/// Projet réalisé, affiché sur la page « Projets »
+model Project {
+  id          String      @id @default(cuid())
+  title       String
+  slug        String      @unique
+  summary     String
+  description String      @db.Text
+  service     ServiceType
+  client      String?
+  coverImage  String?
+  gallery     String[]    @default([])
+  tags        String[]    @default([])
+  link        String?
+  completedAt DateTime?
+  published   Boolean     @default(false)
+  featured    Boolean     @default(false)
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+
+  @@index([published, service])
+}
+
+enum RequestStatus {
+  NEW
+  IN_PROGRESS
+  ACCEPTED
+  DECLINED
+  COMPLETED
+}
+
+/// Demande de prestation / collaboration envoyée depuis le site
+model CollaborationRequest {
+  id         String        @id @default(cuid())
+  fullName   String
+  email      String
+  phone      String?
+  company    String?
+  services   ServiceType[]
+  budget     String?
+  deadline   String?
+  message    String        @db.Text
+  status     RequestStatus @default(NEW)
+  adminNotes String?       @db.Text
+  createdAt  DateTime      @default(now())
+  updatedAt  DateTime      @updatedAt
+
+  @@index([status, createdAt])
+}
