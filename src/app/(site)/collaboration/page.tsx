@@ -28,7 +28,7 @@ export default function CollaborationPage({ searchParams }: PageProps<"/collabor
         <ul className="space-y-3">
           {PROMISES.map((p) => (
             <li key={p} className="flex items-center gap-3 text-ink/80">
-              <span className="flex size-7 items-center justify-center rounded-full bg-sage-100 text-sage-700">
+              <span className="flex size-7 items-center justify-center rounded-full bg-leaf-100 text-leaf-700">
                 <Icon path={icons.check} className="size-4" />
               </span>
               {p}
@@ -37,11 +37,11 @@ export default function CollaborationPage({ searchParams }: PageProps<"/collabor
         </ul>
         <div className="rounded-card border border-sand-300 bg-sand-50 p-5 text-sm text-muted">
           Vous préférez échanger directement ?{" "}
-          <a href={whatsappLink()} target="_blank" rel="noopener noreferrer" className="font-semibold text-coral-600 hover:underline">
+          <a href={whatsappLink()} target="_blank" rel="noopener noreferrer" className="font-semibold text-leaf-700 hover:underline">
             Écrivez-moi sur WhatsApp
           </a>{" "}
           ou par{" "}
-          <a href={`mailto:${site.contact.email}`} className="font-semibold text-coral-600 hover:underline">
+          <a href={`mailto:${site.contact.email}`} className="font-semibold text-leaf-700 hover:underline">
             email
           </a>
           .

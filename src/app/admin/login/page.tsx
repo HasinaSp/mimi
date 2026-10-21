@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function LoginPage() {
   return (
-    <main className="flex flex-1 items-center justify-center bg-gradient-to-br from-plum-800 via-plum-700 to-coral-600 px-4 py-16">
+    <main className="flex flex-1 items-center justify-center bg-gradient-to-br from-petal-200 via-petal-300 to-leaf-400 px-4 py-16">
       <div className="w-full max-w-sm rounded-[1.75rem] bg-white p-8 shadow-2xl">
         <div className="mb-8 flex flex-col items-center gap-3 text-center">
           <LogoMark className="size-14" />
@@ -20,7 +20,7 @@ export default function LoginPage() {
         </div>
         <LoginForm />
         <p className="mt-6 text-center text-sm">
-          <Link href="/" className="text-muted hover:text-plum-700">
+          <Link href="/" className="text-muted hover:text-neutral-700">
             ← Retour au site
           </Link>
         </p>

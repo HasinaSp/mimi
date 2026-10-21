@@ -28,7 +28,7 @@ export default async function AdminProjectsPage({ searchParams }: PageProps<"/ad
         }
       />
 
-      {saved && <p className="mb-6 rounded-xl bg-sage-100 px-4 py-3 text-sm text-sage-700">Projet enregistré avec succès.</p>}
+      {saved && <p className="mb-6 rounded-xl bg-leaf-100 px-4 py-3 text-sm text-leaf-700">Projet enregistré avec succès.</p>}
 
       <div className="card overflow-x-auto">
         {projects.length === 0 ? (
@@ -53,7 +53,7 @@ export default async function AdminProjectsPage({ searchParams }: PageProps<"/ad
               {projects.map((p) => (
                 <tr key={p.id} className="hover:bg-sand-50">
                   <td className="px-5 py-4">
-                    <Link href={`/admin/projets/${p.id}`} className="font-medium text-plum-800 hover:text-coral-600">
+                    <Link href={`/admin/projets/${p.id}`} className="font-medium text-neutral-800 hover:text-leaf-700">
                       {p.title}
                     </Link>
                     <span className="block text-xs text-muted">
@@ -71,7 +71,7 @@ export default async function AdminProjectsPage({ searchParams }: PageProps<"/ad
                         title="Cliquer pour changer"
                         className={cn(
                           "rounded-full px-2.5 py-1 text-xs font-semibold transition",
-                          p.published ? "bg-sage-100 text-sage-700 hover:bg-sage-300" : "bg-stone-200 text-stone-600 hover:bg-stone-300",
+                          p.published ? "bg-leaf-100 text-leaf-700 hover:bg-leaf-300" : "bg-stone-200 text-stone-600 hover:bg-stone-300",
                         )}
                       >
                         {p.published ? "Publié" : "Brouillon"}
@@ -82,19 +82,19 @@ export default async function AdminProjectsPage({ searchParams }: PageProps<"/ad
                     <form action={toggleProjectFlag}>
                       <input type="hidden" name="id" value={p.id} />
                       <input type="hidden" name="field" value="featured" />
-                      <button type="submit" title={p.featured ? "Retirer de la une" : "Mettre à la une"} className="rounded-full p-1 hover:bg-coral-50">
-                        <Icon path={icons.star} className={cn("size-5", p.featured ? "fill-coral-500 text-coral-500" : "text-sand-400")} />
+                      <button type="submit" title={p.featured ? "Retirer de la une" : "Mettre à la une"} className="rounded-full p-1 hover:bg-leaf-50">
+                        <Icon path={icons.star} className={cn("size-5", p.featured ? "fill-leaf-500 text-leaf-500" : "text-sand-400")} />
                       </button>
                     </form>
                   </td>
                   <td className="px-5 py-4">
                     <div className="flex items-center justify-end gap-1">
                       {p.published && (
-                        <Link href={`/projets/${p.slug}`} target="_blank" className="rounded-lg p-2 text-muted hover:bg-plum-50 hover:text-plum-700" title="Voir sur le site">
+                        <Link href={`/projets/${p.slug}`} target="_blank" className="rounded-lg p-2 text-muted hover:bg-petal-50 hover:text-neutral-700" title="Voir sur le site">
                           <Icon path={icons.eye} className="size-4" />
                         </Link>
                       )}
-                      <Link href={`/admin/projets/${p.id}`} className="rounded-lg p-2 text-muted hover:bg-plum-50 hover:text-plum-700" title="Modifier">
+                      <Link href={`/admin/projets/${p.id}`} className="rounded-lg p-2 text-muted hover:bg-petal-50 hover:text-neutral-700" title="Modifier">
                         <Icon path={icons.edit} className="size-4" />
                       </Link>
                       <form action={deleteProject}>

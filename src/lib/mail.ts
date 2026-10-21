@@ -119,20 +119,20 @@ export function adminEmail() {
 export function emailLayout(title: string, bodyHtml: string) {
   return `<!doctype html>
 <html lang="fr">
-  <body style="margin:0;background:#FAF6F1;font-family:Helvetica,Arial,sans-serif;color:#231B26;">
+  <body style="margin:0;background:#F5F4F0;font-family:Helvetica,Arial,sans-serif;color:#262626;">
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="padding:32px 16px;">
       <tr><td align="center">
-        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:560px;background:#ffffff;border-radius:16px;overflow:hidden;border:1px solid #EDE3D8;">
-          <tr><td style="background:#4A2358;padding:24px 32px;">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:560px;background:#ffffff;border-radius:16px;overflow:hidden;border:1px solid #E2DFD7;">
+          <tr><td style="background:#262626;padding:24px 32px;">
             <span style="font-family:Georgia,serif;font-size:22px;color:#ffffff;">${escapeHtml(site.name)}</span>
-            <span style="display:block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#F2B8A6;margin-top:4px;">${escapeHtml(site.role)}</span>
+            <span style="display:block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#FAD0D1;margin-top:4px;">${escapeHtml(site.role)}</span>
           </td></tr>
           <tr><td style="padding:32px;">
-            <h1 style="font-family:Georgia,serif;font-size:22px;margin:0 0 16px;color:#4A2358;">${escapeHtml(title)}</h1>
+            <h1 style="font-family:Georgia,serif;font-size:22px;margin:0 0 16px;color:#262626;">${escapeHtml(title)}</h1>
             ${bodyHtml}
           </td></tr>
-          <tr><td style="padding:16px 32px;background:#F4ECE3;font-size:12px;color:#6E6273;">
-            ${escapeHtml(site.name)} · <a href="${site.url}" style="color:#C9634B;">${site.url.replace(/^https?:\/\//, "")}</a>
+          <tr><td style="padding:16px 32px;background:#EDEBE5;font-size:12px;color:#6B6B6B;">
+            ${escapeHtml(site.name)} · <a href="${site.url}" style="color:#A43F45;">${site.url.replace(/^https?:\/\//, "")}</a>
           </td></tr>
         </table>
       </td></tr>

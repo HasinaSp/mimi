@@ -70,7 +70,7 @@ function FilterChip({ href, active, children }: { href: string; active: boolean;
       aria-current={active ? "page" : undefined}
       className={cn(
         "rounded-full border px-4 py-2 text-sm font-medium transition",
-        active ? "border-plum-700 bg-plum-700 text-white" : "border-sand-400 bg-white text-ink/75 hover:border-plum-300 hover:text-plum-700",
+        active ? "border-neutral-700 bg-neutral-700 text-white" : "border-sand-400 bg-white text-ink/75 hover:border-petal-300 hover:text-neutral-700",
       )}
     >
       {children}

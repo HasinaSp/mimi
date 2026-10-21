@@ -55,7 +55,7 @@ export default async function RequestsPage({ searchParams }: PageProps<"/admin/d
               {requests.map((r) => (
                 <tr key={r.id} className="hover:bg-sand-50">
                   <td className="px-5 py-4">
-                    <Link href={`/admin/demandes/${r.id}`} className="font-medium text-plum-800 hover:text-coral-600">
+                    <Link href={`/admin/demandes/${r.id}`} className="font-medium text-neutral-800 hover:text-leaf-700">
                       {r.fullName}
                     </Link>
                     <span className="block text-xs text-muted">{r.company ?? r.email}</span>
@@ -82,7 +82,7 @@ function Tab({ href, active, label, count }: { href: string; active: boolean; la
       href={href}
       className={cn(
         "inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-sm font-medium transition",
-        active ? "border-plum-700 bg-plum-700 text-white" : "border-sand-400 bg-white text-ink/70 hover:border-plum-300",
+        active ? "border-neutral-700 bg-neutral-700 text-white" : "border-sand-400 bg-white text-ink/70 hover:border-petal-300",
       )}
     >
       {label}

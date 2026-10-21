@@ -13,7 +13,7 @@ export function RequestUpdateForm({ id, status, adminNotes }: { id: string; stat
     <form action={action} className="space-y-5">
       <input type="hidden" name="id" value={id} />
       {state.message && (
-        <p role="status" className={state.ok ? "rounded-xl bg-sage-100 px-4 py-3 text-sm text-sage-700" : "rounded-xl bg-red-50 px-4 py-3 text-sm text-red-700"}>
+        <p role="status" className={state.ok ? "rounded-xl bg-leaf-100 px-4 py-3 text-sm text-leaf-700" : "rounded-xl bg-red-50 px-4 py-3 text-sm text-red-700"}>
           {state.message}
         </p>
       )}
@@ -36,7 +36,7 @@ export function RequestUpdateForm({ id, status, adminNotes }: { id: string; stat
         <textarea id="adminNotes" name="adminNotes" rows={5} defaultValue={adminNotes} className="input" placeholder="Visibles uniquement par vous" />
       </div>
       <label className="flex items-center gap-3 text-sm">
-        <input type="checkbox" name="notifyClient" checked={notify} onChange={(e) => setNotify(e.target.checked)} className="size-4 accent-plum-600" />
+        <input type="checkbox" name="notifyClient" checked={notify} onChange={(e) => setNotify(e.target.checked)} className="size-4 accent-leaf-500" />
         Notifier le client par email du changement de statut
       </label>
       {notify && (

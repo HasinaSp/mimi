@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: PageProps<"/projets/[slug]">)
 export default function ProjectPage({ params }: PageProps<"/projets/[slug]">) {
   return (
     <div className="container-page py-12">
-      <Link href="/projets" className="mb-8 inline-flex items-center gap-2 text-sm font-medium text-plum-700 hover:text-coral-600">
+      <Link href="/projets" className="mb-8 inline-flex items-center gap-2 text-sm font-medium text-neutral-700 hover:text-leaf-700">
         <Icon path={icons.arrowLeft} className="size-4" /> Tous les projets
       </Link>
       <Suspense fallback={<div className="aspect-[16/7] animate-pulse rounded-card bg-sand-200" />}>
@@ -70,14 +70,14 @@ async function ProjectDetail({ params }: { params: PageProps<"/projets/[slug]">[
             {meta.map((m) => (
               <div key={m.label}>
                 <dt className="text-xs font-semibold tracking-wider text-muted uppercase">{m.label}</dt>
-                <dd className="mt-1 font-medium text-plum-800">{m.value}</dd>
+                <dd className="mt-1 font-medium text-neutral-800">{m.value}</dd>
               </div>
             ))}
           </dl>
           {project.tags.length > 0 && (
             <ul className="flex flex-wrap gap-2">
               {project.tags.map((t) => (
-                <li key={t} className="rounded-full bg-plum-50 px-3 py-1 text-xs font-medium text-plum-700">
+                <li key={t} className="rounded-full bg-petal-50 px-3 py-1 text-xs font-medium text-neutral-700">
                   {t}
                 </li>
               ))}

@@ -73,13 +73,13 @@ export function ProjectForm({ project }: { project?: Project }) {
       <aside className="space-y-6">
         <section className="card space-y-5 p-6">
           <h2 className="text-lg">Publication</h2>
-          <label className="flex items-center justify-between gap-3 text-sm font-medium text-plum-800">
+          <label className="flex items-center justify-between gap-3 text-sm font-medium text-neutral-800">
             Publié sur le site
-            <input type="checkbox" name="published" defaultChecked={(v.published as boolean | undefined) ?? project?.published ?? true} className="size-5 accent-plum-600" />
+            <input type="checkbox" name="published" defaultChecked={(v.published as boolean | undefined) ?? project?.published ?? true} className="size-5 accent-leaf-500" />
           </label>
-          <label className="flex items-center justify-between gap-3 text-sm font-medium text-plum-800">
+          <label className="flex items-center justify-between gap-3 text-sm font-medium text-neutral-800">
             Mis à la une
-            <input type="checkbox" name="featured" defaultChecked={(v.featured as boolean | undefined) ?? project?.featured ?? false} className="size-5 accent-coral-500" />
+            <input type="checkbox" name="featured" defaultChecked={(v.featured as boolean | undefined) ?? project?.featured ?? false} className="size-5 accent-leaf-500" />
           </label>
           <button type="submit" className="btn-primary w-full" disabled={pending}>
             {pending ? "Enregistrement…" : project ? "Enregistrer les modifications" : "Créer le projet"}

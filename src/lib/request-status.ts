@@ -1,10 +1,10 @@
 import type { RequestStatus } from "@/generated/prisma/enums";
 
 export const REQUEST_STATUSES: { value: RequestStatus; label: string; className: string }[] = [
-  { value: "NEW", label: "Nouvelle", className: "bg-coral-100 text-coral-700" },
-  { value: "IN_PROGRESS", label: "En cours", className: "bg-amber-100 text-amber-800" },
-  { value: "ACCEPTED", label: "Acceptée", className: "bg-sage-100 text-sage-700" },
-  { value: "COMPLETED", label: "Terminée", className: "bg-plum-100 text-plum-700" },
+  { value: "NEW", label: "Nouvelle", className: "bg-petal-100 text-petal-800" },
+  { value: "IN_PROGRESS", label: "En cours", className: "bg-yellow-100 text-yellow-800" },
+  { value: "ACCEPTED", label: "Acceptée", className: "bg-leaf-100 text-leaf-700" },
+  { value: "COMPLETED", label: "Terminée", className: "bg-neutral-800 text-white" },
   { value: "DECLINED", label: "Refusée", className: "bg-stone-200 text-stone-600" },
 ];
 

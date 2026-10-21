@@ -25,7 +25,7 @@ export function DesktopNav({ pathname = "" }: { pathname?: string }) {
             href={item.href}
             className={cn(
               "rounded-full px-4 py-2 text-sm font-medium transition",
-              active ? "bg-plum-100 text-plum-800" : "text-ink/75 hover:text-plum-700",
+              active ? "bg-petal-100 text-neutral-800" : "text-ink/75 hover:text-neutral-700",
             )}
           >
             {item.label}
@@ -49,7 +49,7 @@ export function MobileNav() {
     <>
       <button
         type="button"
-        className="rounded-full p-2 text-plum-800 md:hidden"
+        className="rounded-full p-2 text-neutral-800 md:hidden"
         onClick={() => setOpen((v) => !v)}
         aria-expanded={open}
         aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
@@ -64,7 +64,7 @@ export function MobileNav() {
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="rounded-xl px-3 py-2.5 font-medium text-ink/80 hover:bg-plum-50"
+                className="rounded-xl px-3 py-2.5 font-medium text-ink/80 hover:bg-petal-50"
               >
                 {item.label}
               </Link>

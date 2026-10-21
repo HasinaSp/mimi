@@ -24,7 +24,7 @@ export async function notifyNewRequest(request: CollaborationRequest) {
     .filter(([, v]) => v)
     .map(
       ([k, v]) =>
-        `<tr><td style="padding:6px 12px 6px 0;color:#6E6273;font-size:13px;white-space:nowrap;">${k}</td><td style="padding:6px 0;font-size:14px;">${escapeHtml(v!)}</td></tr>`,
+        `<tr><td style="padding:6px 12px 6px 0;color:#6B6B6B;font-size:13px;white-space:nowrap;">${k}</td><td style="padding:6px 0;font-size:14px;">${escapeHtml(v!)}</td></tr>`,
     )
     .join("");
 
@@ -39,8 +39,8 @@ export async function notifyNewRequest(request: CollaborationRequest) {
       html: emailLayout(
         "Nouvelle demande de prestation",
         `<table role="presentation" style="margin-bottom:16px;">${table}</table>
-         <div style="background:#FAF6F1;border-radius:12px;padding:16px;font-size:14px;line-height:1.6;white-space:pre-line;">${escapeHtml(request.message)}</div>
-         <p style="margin:24px 0 0;"><a href="${adminUrl}" style="display:inline-block;background:#E07A5F;color:#fff;text-decoration:none;padding:12px 22px;border-radius:999px;font-weight:bold;font-size:14px;">Ouvrir dans le back-office</a></p>`,
+         <div style="background:#F5F4F0;border-radius:12px;padding:16px;font-size:14px;line-height:1.6;white-space:pre-line;">${escapeHtml(request.message)}</div>
+         <p style="margin:24px 0 0;"><a href="${adminUrl}" style="display:inline-block;background:#F19598;color:#171717;text-decoration:none;padding:12px 22px;border-radius:999px;font-weight:bold;font-size:14px;">Ouvrir dans le back-office</a></p>`,
       ),
     }),
     sendMail({

@@ -11,7 +11,7 @@ export function ProjectCover({ project, sizes }: { project: Pick<Project, "title
   }
   // Visuel par défaut quand aucune image n'est fournie
   return (
-    <div className="flex size-full items-center justify-center bg-gradient-to-br from-plum-600 via-plum-700 to-coral-500">
+    <div className="flex size-full items-center justify-center bg-gradient-to-br from-petal-300 via-petal-400 to-leaf-500">
       {service && <Icon path={service.icon} className="size-14 text-white/85" />}
     </div>
   );
@@ -29,7 +29,7 @@ export function ProjectCard({ project }: { project: Project }) {
           <ProjectCover project={project} sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" />
         </div>
         {project.featured && (
-          <span className="absolute top-3 left-3 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-plum-700">
+          <span className="absolute top-3 left-3 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-neutral-700">
             ★ À la une
           </span>
         )}
@@ -38,7 +38,7 @@ export function ProjectCard({ project }: { project: Project }) {
         <span className="eyebrow">{service?.label}</span>
         <h3 className="text-xl leading-snug">{project.title}</h3>
         <p className="line-clamp-3 text-sm leading-relaxed text-muted">{project.summary}</p>
-        <span className="mt-auto inline-flex items-center gap-1.5 pt-2 text-sm font-semibold text-coral-600">
+        <span className="mt-auto inline-flex items-center gap-1.5 pt-2 text-sm font-semibold text-leaf-700">
           Voir le projet
           <Icon path={icons.arrowRight} className="size-4 transition group-hover:translate-x-1" />
         </span>

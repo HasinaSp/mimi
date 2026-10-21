@@ -27,7 +27,7 @@ export function AdminNav({ pathname = "" }: { pathname?: string }) {
             href={item.href}
             className={cn(
               "flex shrink-0 items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition",
-              active ? "bg-white/15 text-white" : "text-plum-200 hover:bg-white/10 hover:text-white",
+              active ? "bg-white/15 text-white" : "text-petal-200 hover:bg-white/10 hover:text-white",
             )}
           >
             <Icon path={item.icon} />

@@ -18,14 +18,14 @@ export default async function RequestDetailPage({ params }: PageProps<"/admin/de
 
   const phoneDigits = request.phone?.replace(/[^\d]/g, "");
   const details = [
-    { label: "Email", value: <a href={`mailto:${request.email}`} className="text-coral-600 hover:underline">{request.email}</a> },
+    { label: "Email", value: <a href={`mailto:${request.email}`} className="text-leaf-700 hover:underline">{request.email}</a> },
     request.phone && {
       label: "Téléphone",
       value: (
         <span className="flex flex-wrap gap-3">
-          <a href={`tel:${request.phone}`} className="text-coral-600 hover:underline">{request.phone}</a>
+          <a href={`tel:${request.phone}`} className="text-leaf-700 hover:underline">{request.phone}</a>
           {phoneDigits && (
-            <a href={`https://wa.me/${phoneDigits}`} target="_blank" rel="noopener noreferrer" className="text-sage-700 hover:underline">
+            <a href={`https://wa.me/${phoneDigits}`} target="_blank" rel="noopener noreferrer" className="text-leaf-700 hover:underline">
               WhatsApp
             </a>
           )}
@@ -40,7 +40,7 @@ export default async function RequestDetailPage({ params }: PageProps<"/admin/de
 
   return (
     <>
-      <Link href="/admin/demandes" className="mb-6 inline-flex items-center gap-2 text-sm font-medium text-plum-700 hover:text-coral-600">
+      <Link href="/admin/demandes" className="mb-6 inline-flex items-center gap-2 text-sm font-medium text-neutral-700 hover:text-leaf-700">
         <Icon path={icons.arrowLeft} className="size-4" /> Retour aux demandes
       </Link>
 
@@ -55,7 +55,7 @@ export default async function RequestDetailPage({ params }: PageProps<"/admin/de
             <h2 className="mb-4 text-lg">Services demandés</h2>
             <ul className="flex flex-wrap gap-2">
               {request.services.map((s) => (
-                <li key={s} className="rounded-full bg-plum-50 px-3 py-1 text-sm font-medium text-plum-700">
+                <li key={s} className="rounded-full bg-petal-50 px-3 py-1 text-sm font-medium text-neutral-700">
                   {serviceLabel(s)}
                 </li>
               ))}
